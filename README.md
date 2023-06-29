@@ -6,12 +6,13 @@ Open Ends:
 
 ## Permissions
 We can define a basic [permission model](https://www.ory.sh/docs/keto/modeling/create-permission-model)
-as such. We have the following entities for now:
+as follows. We have the following entities for now:
 
 - workspaces
 - users
 - units
-- documents
+
+Users can be owners or users of workspaces, and a workspace contains units (exclusively).
 
 We can define the following permissions in OPL as such:
 
