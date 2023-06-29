@@ -18,6 +18,8 @@ And run the API:
 go run cmd/server/main.go
 ```
 
+Until [this issue](https://github.com/ory/keto/issues/1339) is fixed, you need to run all `curl http://0.0.0.0:4467/admin/relation-tuples` commands listed below to create the relations.
+
 ## Permissions
 We can define a basic [permission model](https://www.ory.sh/docs/keto/modeling/create-permission-model)
 as follows. We have the following entities for now:
