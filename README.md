@@ -4,6 +4,20 @@ Open Ends:
 
 - [ ] implement the workspace-> unit relation
 
+## Usage
+
+Run the docker containers:
+
+```bash
+cd keto && docker-compose up -d
+```
+
+And run the API:
+
+```bash
+go run cmd/server/main.go
+```
+
 ## Permissions
 We can define a basic [permission model](https://www.ory.sh/docs/keto/modeling/create-permission-model)
 as follows. We have the following entities for now:
