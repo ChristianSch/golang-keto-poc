@@ -32,18 +32,30 @@ Users can be owners or users of workspaces, and a workspace contains units (excl
 
 We can define the following permissions in OPL as such:
 
-Users have access to specific workspaces:
+Users have access to specific workspaces. We'll use the Zanzibar relation notation as defined in the paper:
 
-- workspace:1:users:alice:view -> true
-- workspace:1:users:bob:view -> true
-- workspace:1:users:alice:owner -> true
-- workspace:1:users:bob:owner -> false
+```
+⟨tuple⟩ ::= ⟨object⟩‘#’⟨relation⟩‘@’⟨user⟩
+⟨object⟩ ::= ⟨namespace⟩‘:’⟨object id⟩
+⟨user⟩ ::= ⟨user id⟩ | ⟨userset⟩
+⟨userset⟩ ::= ⟨object⟩‘#’⟨relation⟩
+```
 
-Users have access to specific units for a workspace:
+Which gives us:
 
-- workspace:1:units:1:users:alice:view -> true
-- workspace:1:units:1:users:bob:view -> true
+- `Workspace:1#owners:@alice`
+- `Workspace:1#users:@bob`
+- `Workspace:2#users:@alice`
+- `Workspace:1#view@relation:owners#member`: all owners also are permitted to view the workspace
+- `Workspace:1#view@relation:users#member`: all users also are permitted to view the workspace
 
+More explicitly:
+
+- `Workspace:1#view:@alice`
+- `Workspace:1#view:@bob`
+- `Workspace:2#view:@alice`
+
+This essentially means that alice is an owner of workspace 1, and a user of workspace 2. bob is a user of workspace 1. Both alice and bob can view workspace 1, but only alice can view workspace 2.
 
 We can formulate this in typescript/OLP as such:
     
