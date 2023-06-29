@@ -1,0 +1,10 @@
+{
+    "$schema": "../.schema/relation_tuple.schema.json",
+    "namespace": "Workspace",
+    "object": "1",
+    "relation": "owners",
+    "subject_set": {
+        "namespace": "User",
+        "object": "alice"
+    }
+}
