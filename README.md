@@ -1,4 +1,8 @@
-# Zanzibar-inspired Permission POC for digital office
+# Zanzibar-inspired Permission POC
+
+Open Ends:
+
+- [ ] implement the workspace-> unit relation
 
 ## Permissions
 We can define a basic [permission model](https://www.ory.sh/docs/keto/modeling/create-permission-model)
