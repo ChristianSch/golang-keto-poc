@@ -1,0 +1,9 @@
+{
+    "namespace": "Workspace",
+    "object": "2",
+    "relation": "users",
+    "subject_set": {
+        "namespace": "User",
+        "object": "alice"
+    }
+}
